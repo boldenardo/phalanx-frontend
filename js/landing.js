@@ -360,6 +360,80 @@
     document.getElementById("aiSummary").textContent =
       report.ai_summary ||
       "Diagnóstico automático indisponível neste scan público — peça uma análise completa em Falar com a Arkkhe.";
+    renderDiagnostic(report.diagnostic || {}, report);
+  }
+
+  function renderDiagnostic(diagnostic, report) {
+    const risk = document.getElementById("diagRisk");
+    const headline = document.getElementById("diagHeadline");
+    const plain = document.getElementById("diagPlain");
+    const actionList = document.getElementById("actionList");
+    const fixPrompt = document.getElementById("fixPrompt");
+    const siteContext = document.getElementById("siteContext");
+    const machineContext = document.getElementById("machineContext");
+    if (!risk || !headline || !plain || !actionList || !fixPrompt) return;
+
+    const riskLevel = diagnostic.risk_level || "INFO";
+    risk.textContent = riskLevel;
+    risk.className = "risk-pill " + riskLevel;
+    headline.textContent = diagnostic.headline || "Diagnóstico concluído";
+    plain.textContent =
+      diagnostic.plain_language ||
+      "O scan externo terminou. Use os números acima para priorizar correções e rode o agente local para entender a máquina.";
+
+    actionList.innerHTML = "";
+    const actions = diagnostic.priority_actions || [];
+    actions.slice(0, 6).forEach((action) => {
+      const li = document.createElement("li");
+      li.innerHTML =
+        "<strong>" +
+        escapeHtml(action.title || "Ação recomendada") +
+        "</strong>" +
+        "<span>Estrago possível: " +
+        escapeHtml(action.why || "Risco operacional ou de segurança.") +
+        "</span>" +
+        "<span>Correção: " +
+        escapeHtml(action.how || "Revisar configuração e validar novamente.") +
+        "</span>" +
+        "<em>Responsável: " +
+        escapeHtml(action.owner || "Equipe técnica") +
+        " · Urgência: " +
+        escapeHtml(action.urgency || "priorizar") +
+        "</em>";
+      actionList.appendChild(li);
+    });
+    if (!actionList.children.length) {
+      const li = document.createElement("li");
+      li.innerHTML =
+        "<strong>Monitorar continuamente</strong><span>Nenhuma brecha óbvia apareceu neste scan externo, mas deploys e dependências podem mudar o risco.</span>";
+      actionList.appendChild(li);
+    }
+
+    const prompt = diagnostic.fix_prompt || {
+      role: "IA engenheira de segurança defensiva",
+      goal: "Corrigir os problemas encontrados sem testes destrutivos",
+      site: report.url,
+      scores: report.score || {},
+    };
+    fixPrompt.textContent = JSON.stringify(prompt, null, 2).slice(0, 3200);
+    siteContext.textContent =
+      diagnostic.human_context?.site ||
+      "O scan do site mede sinais públicos da URL: performance, TLS, headers, cookies, tecnologias e exposições.";
+    machineContext.textContent =
+      diagnostic.human_context?.machine ||
+      "O scan da máquina exige agente autorizado para ler portas, processos, firewall, listeners e baseline local.";
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? "").replace(/[&<>'"]/g, (ch) => {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#39;",
+        '"': "&quot;",
+      }[ch];
+    });
   }
 
   function item(label, value, cls) {
