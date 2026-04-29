@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>PHALANX &mdash; Amea&ccedil;as hoje</title>
+    <meta
+      name="description"
+      content="Acompanhe vulnerabilidades exploradas agora e entenda como Phalanx prioriza risco real."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="preload"
+      href="fonts/Orlean.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Aventa-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/landing.css?v=20260429" />
+  </head>
+  <body>
+    <div class="aurora">
+      <span class="aur a1"></span><span class="aur a2"></span
+      ><span class="aur a3"></span>
+      <div class="grid-overlay"></div>
+    </div>
+    <header class="lp-topbar">
+      <a href="/" class="brand"
+        ><img class="brand-logo" src="assets/logo%20phanlax.png" alt="" /><span
+          class="brand-name"
+          >PHALANX</span
+        ><span class="brand-ver">THREATS</span></a
+      >
+      <nav class="lp-nav">
+        <a href="/produto">Produto</a><a href="/scan-gratis">Scan gratis</a
+        ><a href="/planos">Planos</a><a href="/ameacas-hoje">Ameacas hoje</a
+        ><a href="/console" class="muted">Console</a>
+      </nav>
+      <a href="/login" class="btn btn-ghost"
+        ><i class="fas fa-user-shield"></i> Entrar</a
+      >
+    </header>
+    <main class="detail-page">
+      <section class="detail-hero">
+        <div>
+          <span class="section-tag"
+            ><i class="fas fa-bolt"></i> AMEACAS HOJE</span
+          >
+          <h1>O risco muda todo dia. A prioridade tamb&eacute;m.</h1>
+          <p>
+            Phalanx acompanha fontes como CISA KEV e cruza esses sinais com seus
+            sites e m&aacute;quinas para evitar que voc&ecirc; trate
+            vulnerabilidade antiga como urg&ecirc;ncia e urg&ecirc;ncia real
+            como ru&iacute;do.
+          </p>
+          <div class="detail-actions">
+            <a class="btn btn-primary" href="/console"
+              ><i class="fas fa-bell"></i> Monitorar meus ativos</a
+            ><a class="btn btn-ghost" href="/scan-gratis"
+              ><i class="fas fa-radar"></i> Testar site</a
+            >
+          </div>
+        </div>
+        <aside class="detail-signal threat">
+          <span>fonte</span><b>CISA</b><em>exploradas in-the-wild</em><i></i>
+        </aside>
+      </section>
+      <section class="threats-live detail-threats">
+        <div class="section-head">
+          <span class="section-tag"
+            ><i class="fas fa-satellite-dish"></i> FEED</span
+          >
+          <h2>Vulnerabilidades em explora&ccedil;&atilde;o conhecida.</h2>
+          <p>
+            O feed abaixo &eacute; o mesmo usado pela landing para orientar
+            urg&ecirc;ncia.
+          </p>
+        </div>
+        <div class="ticker" id="ticker">
+          <div class="ticker-row" id="tickerRow">
+            <span class="muted-line">Carregando feed&hellip;</span>
+          </div>
+        </div>
+      </section>
+      <section class="detail-grid three">
+        <article>
+          <i class="fas fa-fire-flame-curved"></i>
+          <h2>Explora&ccedil;&atilde;o real</h2>
+          <p>
+            Priorizamos o que aparece em cat&aacute;logos de vulnerabilidades
+            exploradas, n&atilde;o apenas CVSS alto.
+          </p>
+        </article>
+        <article>
+          <i class="fas fa-filter"></i>
+          <h2>Menos ru&iacute;do</h2>
+          <p>
+            O objetivo &eacute; apontar a corre&ccedil;&atilde;o que muda risco
+            operacional primeiro.
+          </p>
+        </article>
+        <article>
+          <i class="fas fa-bell"></i>
+          <h2>Alerta acion&aacute;vel</h2>
+          <p>
+            Quando o ativo monitorado combina com um sinal relevante, o painel e
+            o canal de alerta viram prioridade.
+          </p>
+        </article>
+      </section>
+    </main>
+    <script src="js/landing.js?v=20260429"></script>
+  </body>
+</html>

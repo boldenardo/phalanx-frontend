@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>PHALANX &mdash; Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fira+Code:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/landing.css?v=20260429" />
+    <link rel="stylesheet" href="css/console.css?v=20260429" />
+    <script src="/clerk-config.js"></script>
+  </head>
+  <body>
+    <div class="aurora">
+      <span class="aur a1"></span>
+      <span class="aur a2"></span>
+      <span class="aur a3"></span>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <header class="lp-topbar">
+      <a href="/" class="brand" style="text-decoration: none">
+        <img class="brand-logo" src="assets/logo%20phanlax.png" alt="" />
+        <span class="brand-name">PHALANX</span>
+        <span class="brand-ver">LOGIN</span>
+      </a>
+      <nav class="lp-nav">
+        <a href="/produto">Produto</a>
+        <a href="/scan-gratis">Scan gratis</a>
+        <a href="/planos">Planos</a>
+        <a href="/admin">Admin</a>
+      </nav>
+      <div id="userArea" class="user-area"></div>
+    </header>
+
+    <main class="console">
+      <section id="signedOut" class="auth-card" hidden>
+        <div class="auth-inner">
+          <div class="auth-copy">
+            <span class="section-tag"
+              ><i class="fas fa-fingerprint"></i> ACESSO SEGURO</span
+            >
+            <h1>Entre no centro de defesa.</h1>
+            <p>
+              Sua conta libera licen&ccedil;as, pareamento de agentes, sites
+              monitorados e o hist&oacute;rico completo de auditorias.
+            </p>
+            <div class="auth-terminal" aria-hidden="true">
+              <span>$ phalanx auth --console</span>
+              <b>clerk.google verified</b>
+              <em>redirect: /console</em>
+            </div>
+          </div>
+          <div class="auth-panel">
+            <img class="auth-logo" src="assets/logo%20phanlax.png" alt="" />
+            <div id="clerkSignIn"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="signedIn" hidden>
+        <div class="welcome">
+          <div>
+            <span class="section-tag"
+              ><i class="fas fa-user-shield"></i> CENTRO DE COMANDO</span
+            >
+            <h1 id="helloName">Bem-vindo</h1>
+            <p class="muted-line" id="accountEmail">--</p>
+          </div>
+          <img
+            class="console-logo"
+            src="assets/logo%20phanlax.png"
+            alt="Phalanx by Arkkhe"
+          />
+          <button class="btn btn-primary" id="btnNewLicense">
+            <i class="fas fa-plus"></i> Nova licen&ccedil;a
+          </button>
+        </div>
+
+        <section class="block profile-block">
+          <div class="block-head">
+            <h2><i class="fas fa-user-astronaut"></i> Perfil de defesa</h2>
+            <span class="muted-line"
+              >Escolha o avatar que aparece no seu perfil.</span
+            >
+          </div>
+          <div class="hero-picker" id="heroPicker">
+            <button class="hero-card" data-hero="sentinel" type="button">
+              <span class="hero-model sentinel"><i></i></span>
+              <b>Sentinela</b>
+              <small>Monitoramento e resposta r&aacute;pida.</small>
+            </button>
+            <button class="hero-card" data-hero="hoplite" type="button">
+              <span class="hero-model hoplite"><i></i></span>
+              <b>Hoplita</b>
+              <small>Defesa de endpoint e conten&ccedil;&atilde;o.</small>
+            </button>
+            <button class="hero-card" data-hero="oracle" type="button">
+              <span class="hero-model oracle"><i></i></span>
+              <b>Or&aacute;culo</b>
+              <small
+                >An&aacute;lise, previs&atilde;o e
+                prioriza&ccedil;&atilde;o.</small
+              >
+            </button>
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="block-head">
+            <h2><i class="fas fa-key"></i> Licen&ccedil;as</h2>
+            <span class="muted-line" id="licCount">--</span>
+          </div>
+          <div id="licenses" class="lic-grid">
+            <p class="muted-line">Carregando...</p>
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="block-head">
+            <h2><i class="fas fa-globe"></i> Sites monitorados</h2>
+            <form id="addSiteForm" class="inline-form">
+              <input
+                type="text"
+                name="url"
+                placeholder="https://meusite.com.br"
+                required
+                maxlength="240"
+              />
+              <button class="btn btn-ghost" type="submit">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </form>
+          </div>
+          <div id="sites" class="sites-list">
+            <p class="muted-line">Carregando...</p>
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="block-head">
+            <h2>
+              <i class="fas fa-clock-rotate-left"></i> Hist&oacute;rico de
+              requisi&ccedil;&otilde;es
+            </h2>
+            <button class="btn btn-ghost" id="btnRefreshHistory" type="button">
+              <i class="fas fa-rotate"></i> Atualizar
+            </button>
+          </div>
+          <div id="history" class="history-list">
+            <p class="muted-line">Carregando...</p>
+          </div>
+        </section>
+
+        <section class="block diagnostic-block">
+          <div class="block-head">
+            <h2>
+              <i class="fas fa-terminal"></i> Terminal de diagn&oacute;stico
+            </h2>
+            <div class="diag-actions">
+              <button
+                class="btn btn-ghost"
+                id="btnCopyDiagnostic"
+                type="button"
+              >
+                <i class="fas fa-copy"></i> Copiar diagn&oacute;stico
+              </button>
+              <button
+                class="btn btn-ghost"
+                id="btnRefreshDiagnostic"
+                type="button"
+              >
+                <i class="fas fa-rotate"></i> Atualizar
+              </button>
+            </div>
+          </div>
+          <div class="diag-grid">
+            <article
+              class="diag-terminal"
+              aria-label="Diagn&oacute;stico da m&aacute;quina"
+            >
+              <div class="diag-terminal-bar">
+                <span></span><span></span><span></span>
+                <b>phalanx-agent — endpoint</b>
+              </div>
+              <pre id="machineTerminal">
+Carregando diagn&oacute;stico da m&aacute;quina...</pre
+              >
+            </article>
+            <article
+              class="diag-terminal"
+              aria-label="Diagn&oacute;stico do site"
+            >
+              <div class="diag-terminal-bar">
+                <span></span><span></span><span></span>
+                <b>phalanx-webscan — site</b>
+              </div>
+              <pre id="siteTerminal">
+Carregando diagn&oacute;stico do site...</pre
+              >
+            </article>
+          </div>
+          <div id="diagnosticBrief" class="diagnostic-brief">
+            <p class="muted-line">
+              Aguardando dados para montar o diagn&oacute;stico.
+            </p>
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="block-head">
+            <h2><i class="fas fa-bell"></i> Alertas recentes</h2>
+            <span class="muted-line">As maquinas pareadas reportam aqui.</span>
+          </div>
+          <div id="alerts" class="alerts-list">
+            <p class="muted-line">Carregando...</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="modal" id="modal" hidden>
+      <div class="modal-card">
+        <button class="modal-close" id="modalClose">
+          <i class="fas fa-times"></i>
+        </button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="js/console.js"></script>
+  </body>
+</html>

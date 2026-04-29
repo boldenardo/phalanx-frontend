@@ -1,0 +1,61 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/dashboard",
+      "destination": "/console",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://api.cyber.arkkhe.com/api/:path*"
+    },
+    {
+      "source": "/clerk-config.js",
+      "destination": "https://api.cyber.arkkhe.com/clerk-config.js"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/console.html"
+    },
+    {
+      "source": "/console",
+      "destination": "/console.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/produto",
+      "destination": "/produto.html"
+    },
+    {
+      "source": "/scan-gratis",
+      "destination": "/scan-gratis.html"
+    },
+    {
+      "source": "/planos",
+      "destination": "/planos.html"
+    },
+    {
+      "source": "/ameacas-hoje",
+      "destination": "/ameacas-hoje.html"
+    },
+    {
+      "source": "/checkout",
+      "destination": "/checkout.html"
+    },
+    {
+      "source": "/",
+      "destination": "/landing.html"
+    }
+  ]
+}

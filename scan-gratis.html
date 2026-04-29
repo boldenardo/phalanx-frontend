@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>PHALANX &mdash; Scan gratis</title>
+    <meta
+      name="description"
+      content="Rode um diagnostico gratuito de performance, seguranca e exposicao do seu site com Phalanx."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="preload"
+      href="fonts/Orlean.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Aventa-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/landing.css?v=20260429" />
+  </head>
+  <body>
+    <div class="aurora">
+      <span class="aur a1"></span><span class="aur a2"></span
+      ><span class="aur a3"></span>
+      <div class="grid-overlay"></div>
+    </div>
+    <header class="lp-topbar">
+      <a href="/" class="brand"
+        ><img class="brand-logo" src="assets/logo%20phanlax.png" alt="" /><span
+          class="brand-name"
+          >PHALANX</span
+        ><span class="brand-ver">SCAN</span></a
+      >
+      <nav class="lp-nav">
+        <a href="/produto">Produto</a><a href="/scan-gratis">Scan gratis</a
+        ><a href="/planos">Planos</a><a href="/ameacas-hoje">Ameacas hoje</a
+        ><a href="/console" class="muted">Console</a>
+      </nav>
+      <a href="/login" class="btn btn-ghost"
+        ><i class="fas fa-user-shield"></i> Entrar</a
+      >
+    </header>
+    <main class="detail-page">
+      <section class="detail-hero scan-detail">
+        <div>
+          <span class="section-tag"
+            ><i class="fas fa-radar"></i> SCAN GRATIS</span
+          >
+          <h1>
+            Uma URL, quatro leituras: velocidade, seguran&ccedil;a, brechas e
+            prioridade.
+          </h1>
+          <p>
+            O scan gratuito n&atilde;o tenta invadir nada. Ele mede sinais
+            externos permitidos e monta um diagn&oacute;stico claro para dono de
+            site agir sem depender de achismo.
+          </p>
+        </div>
+        <form id="scanForm" class="scan-form detail-scan-form">
+          <div class="scan-input">
+            <i class="fas fa-link"></i
+            ><input
+              type="text"
+              name="url"
+              id="scanUrl"
+              placeholder="https://seusite.com.br"
+              required
+            /><button type="submit" class="btn btn-primary">
+              <span class="btn-text">Rodar diagn&oacute;stico</span
+              ><span class="btn-loading"
+                ><i class="fas fa-circle-notch fa-spin"></i
+              ></span>
+            </button>
+          </div>
+          <p class="scan-disclaimer">
+            <i class="fas fa-shield-alt"></i> Use apenas em dom&iacute;nios seus
+            ou com permiss&atilde;o.
+          </p>
+        </form>
+      </section>
+      <section class="scan-result" id="scanResult" hidden>
+        <div class="score-row">
+          <div class="score-card score-total">
+            <span class="score-label">Score Geral</span
+            ><span class="score-num" id="scoreTotal">--</span
+            ><span class="score-bar"
+              ><b id="scoreBarTotal" style="width: 0%"></b
+            ></span>
+          </div>
+          <div class="score-card">
+            <span class="score-label"
+              ><i class="fas fa-bolt"></i> Performance</span
+            ><span class="score-num" id="scorePerf">--</span
+            ><span class="score-bar"
+              ><b id="scoreBarPerf" style="width: 0%"></b
+            ></span>
+          </div>
+          <div class="score-card">
+            <span class="score-label"
+              ><i class="fas fa-shield-alt"></i> Seguran&ccedil;a</span
+            ><span class="score-num" id="scoreSec">--</span
+            ><span class="score-bar"
+              ><b id="scoreBarSec" style="width: 0%"></b
+            ></span>
+          </div>
+          <div class="score-card">
+            <span class="score-label"
+              ><i class="fas fa-skull-crossbones"></i> Brechas</span
+            ><span class="score-num" id="scoreVuln">--</span
+            ><span class="score-bar"
+              ><b id="scoreBarVuln" style="width: 0%"></b
+            ></span>
+          </div>
+        </div>
+        <div class="result-grid">
+          <div class="r-card">
+            <h4><i class="fas fa-tachometer-alt"></i> Velocidade</h4>
+            <ul class="r-list" id="perfList"></ul>
+          </div>
+          <div class="r-card">
+            <h4><i class="fas fa-lock"></i> Seguran&ccedil;a</h4>
+            <ul class="r-list" id="secList"></ul>
+          </div>
+          <div class="r-card">
+            <h4><i class="fas fa-sitemap"></i> Mapeamento</h4>
+            <ul class="r-list" id="mapList"></ul>
+          </div>
+          <div class="r-card r-card-wide">
+            <h4>
+              <i class="fas fa-triangle-exclamation"></i> Brechas detectadas
+            </h4>
+            <div id="vulnList" class="vuln-list">
+              <p class="muted-line">Nenhuma brecha &oacute;bvia ainda.</p>
+            </div>
+          </div>
+          <div class="r-card r-card-wide">
+            <h4><i class="fas fa-brain"></i> Diagn&oacute;stico Phalanx</h4>
+            <p id="aiSummary" class="ai-summary muted-line">
+              Analisando&hellip;
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="detail-grid three">
+        <article>
+          <i class="fas fa-gauge-high"></i>
+          <h2>Performance</h2>
+          <p>
+            Tempo de resposta, peso de p&aacute;gina e redirecionamentos que
+            afetam convers&atilde;o.
+          </p>
+        </article>
+        <article>
+          <i class="fas fa-lock"></i>
+          <h2>Headers e TLS</h2>
+          <p>
+            HSTS, CSP, cookies e validade de certificado sem precisar abrir o
+            servidor.
+          </p>
+        </article>
+        <article>
+          <i class="fas fa-brain"></i>
+          <h2>Resumo por IA</h2>
+          <p>
+            Uma prioridade clara para corrigir hoje, com linguagem de
+            neg&oacute;cio.
+          </p>
+        </article>
+      </section>
+      <section class="detail-band">
+        <div>
+          <span class="section-tag"><i class="fas fa-bug"></i> PLANO PAGO</span>
+          <h2>Prova controlada para mostrar valor real.</h2>
+          <p>
+            No Espartano, a console libera uma valida&ccedil;&atilde;o paga com
+            confirma&ccedil;&atilde;o manual: Phalanx executa provas HTTP
+            benignas, estilo bug bounty, e registra evid&ecirc;ncias objetivas
+            do problema sem explora&ccedil;&atilde;o destrutiva.
+          </p>
+        </div>
+        <aside class="detail-signal">
+          <span>desbloqueio</span><b>R$197</b><em>confirmar antes de rodar</em
+          ><i></i>
+        </aside>
+      </section>
+      <section class="detail-band local-proof-mini">
+        <div>
+          <span class="section-tag"
+            ><i class="fas fa-laptop-code"></i> MAQUINA LOCAL</span
+          >
+          <h2>Para ver o computador, existe o agente autorizado.</h2>
+          <p>
+            O scan gratuito desta p&aacute;gina olha o site. Na conta, o agente
+            pareado roda em Windows, Linux, macOS e Android/Termux para montar
+            um diagn&oacute;stico local com portas abertas, listeners,
+            processos, firewall, baseline e ferramentas defensivas
+            dispon&iacute;veis no dispositivo.
+          </p>
+        </div>
+        <aside
+          class="hero-terminal local-terminal compact-terminal"
+          aria-label="Terminal de scan local"
+        >
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span
+            ><span class="dot green"></span>
+            <span class="terminal-title">phalanx-agent — local</span>
+          </div>
+          <div class="terminal-body">
+            <p><span>$</span> phalanx-agent --scan machine</p>
+            <p class="ok">✓ engine: nmap / tcp-fallback</p>
+            <p class="ok">✓ repert&oacute;rio: burp suite / yara / osquery</p>
+            <p class="ok">✓ plataforma detectada automaticamente</p>
+            <p class="warn">! baseline comparado com scan anterior</p>
+            <p class="dim">diagn&oacute;stico aparece no terminal da console</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="js/landing.js?v=20260429"></script>
+  </body>
+</html>

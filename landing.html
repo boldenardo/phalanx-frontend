@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>
+      PHALANX &mdash; A muralha digital que protege seu computador e seu site
+    </title>
+    <meta
+      name="description"
+      content="Phalanx mostra onde seu site e sua maquina estao vulneraveis, corrige prioridades e transforma risco invisivel em acao clara. Por Arkkhe Intelligent."
+    />
+    <meta
+      property="og:title"
+      content="PHALANX &mdash; Defesa cibernetica autonoma"
+    />
+    <meta
+      property="og:description"
+      content="Protege computador. Audita sites. Encontra brechas. Avisa pelo WhatsApp."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="preload"
+      href="fonts/Orlean.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Aventa-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/landing.css?v=20260429" />
+  </head>
+  <body>
+    <!-- ===== AURORA BG ===== -->
+    <div class="aurora">
+      <span class="aur a1"></span>
+      <span class="aur a2"></span>
+      <span class="aur a3"></span>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <!-- ===== TOPBAR ===== -->
+    <header class="lp-topbar">
+      <div class="brand">
+        <img class="brand-logo" src="assets/logo%20phanlax.png" alt="" />
+        <span class="brand-name">PHALANX</span>
+        <span class="brand-ver">v4.0</span>
+      </div>
+      <nav class="lp-nav">
+        <a href="/produto">Produto</a>
+        <a href="/scan-gratis">Scan gratis</a>
+        <a href="/planos">Planos</a>
+        <a href="/ameacas-hoje">Ameacas hoje</a>
+        <a href="/console" class="muted">Console</a>
+        <a href="/admin" class="muted">Admin</a>
+      </nav>
+      <a href="/login" class="btn btn-ghost"
+        ><i class="fas fa-user-shield"></i> Entrar</a
+      >
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="badge-row">
+            <span class="badge-dot"></span>
+            <span>SCAN GRATUITO &middot; DIAGNOSTICO EM SEGUNDOS</span>
+          </div>
+
+          <h1 class="hero-title">
+            Diagn&oacute;stico real antes do preju&iacute;zo.
+          </h1>
+
+          <p class="hero-sub">
+            Phalanx une auditoria de site, sinais de exposi&ccedil;&atilde;o e
+            agente local autorizado para mostrar o que normalmente fica
+            escondido: performance ruim, configura&ccedil;&atilde;o frouxa,
+            portas abertas e risco operacional.
+            <em>Sem achismo. Sem painel que s&oacute; enfeita.</em>
+          </p>
+
+          <form id="heroScan" class="hero-scan" autocomplete="off">
+            <div class="hero-scan-inner">
+              <i class="fas fa-globe"></i>
+              <input
+                type="text"
+                name="url"
+                id="heroUrl"
+                placeholder="cole a URL do seu site (ex: minhaempresa.com.br)"
+                required
+              />
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-radar"></i> Ver meu risco agora
+                <span class="btn-arrow">&rarr;</span>
+              </button>
+            </div>
+            <span class="hero-scan-hint"
+              ><i class="fas fa-lock"></i> Scan gratis &middot; sem cadastro
+              &middot; para an&aacute;lises de m&aacute;quina, o agente roda
+              apenas com autoriza&ccedil;&atilde;o do dono do dispositivo</span
+            >
+          </form>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num"><span data-count="20">0</span></span>
+              <span class="stat-label">pontos de risco checados</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num"
+                ><span data-count="7">0</span><i>+</i></span
+              >
+              <span class="stat-label">fontes de amea&ccedil;as cruzadas</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num"
+                ><span data-count="60">0</span><i>s</i></span
+              >
+              <span class="stat-label">para enxergar o problema</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num"
+                ><span data-count="24">0</span><i>/7</i></span
+              >
+              <span class="stat-label">monitoramento possivel</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-terminal" aria-label="Terminal Phalanx em macOS">
+          <div class="terminal-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">phalanx-agent — zsh</span>
+          </div>
+          <div class="terminal-body">
+            <p><span>$</span> phalanx scan --profile full</p>
+            <p class="ok">✓ Site auditado: TLS, headers, TTFB, redirects</p>
+            <p class="ok">✓ Agente local: Windows, macOS, Linux, Android</p>
+            <p class="ok">✓ Engine: nmap ou tcp-fallback autorizado</p>
+            <p class="warn">! Portas abertas e baseline local registrados</p>
+            <p class="dim">burp suite / yara / processos / rede / firecrawl</p>
+            <div class="terminal-meter"><b style="width: 76%"></b></div>
+            <p><span>risk-score</span> 76/100 · prioridade: corrigir hoje</p>
+          </div>
+        </aside>
+      </div>
+
+      <canvas id="matrixCanvas"></canvas>
+    </section>
+
+    <!-- ===== OFFER STRIP ===== -->
+    <section class="offer-strip" aria-label="promessa phalanx">
+      <div class="motion-band">
+        <div class="motion-copy">
+          <span class="section-tag"
+            ><i class="fas fa-bolt"></i> OFERTA SIMPLES</span
+          >
+          <h2>
+            Em vez de perguntar se voc&ecirc; est&aacute; seguro, Phalanx mostra
+            o que est&aacute; custando caro.
+          </h2>
+        </div>
+        <div class="uiverse-stack">
+          <article class="uiverse-card">
+            <i class="fas fa-eye"></i><b>Enxerga</b
+            ><span>brechas, velocidade e exposi&ccedil;&atilde;o.</span>
+          </article>
+          <article class="uiverse-card">
+            <i class="fas fa-list-check"></i><b>Prioriza</b
+            ><span>o que muda risco e convers&atilde;o primeiro.</span>
+          </article>
+          <article class="uiverse-card">
+            <i class="fas fa-bell"></i><b>Avisa</b
+            ><span>no canal certo antes do preju&iacute;zo crescer.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PILLARS ===== -->
+    <section id="produto" class="pillars">
+      <div class="section-head">
+        <span class="section-tag"><i class="fas fa-cubes"></i> A FALANGE</span>
+        <h2>Tr&ecirc;s coisas que derrubam uma empresa digital.</h2>
+        <p>
+          Phalanx n&atilde;o vende medo. Ele mostra onde o dinheiro escapa e
+          onde o risco vira incidente.
+        </p>
+      </div>
+
+      <div class="pillar-grid">
+        <article class="pillar">
+          <div class="pillar-ico"><i class="fas fa-laptop-code"></i></div>
+          <h3>M&aacute;quina sem ponto cego</h3>
+          <p>
+            Processo estranho, arquivo suspeito, listener exposto, firewall
+            fraco ou comportamento fora do normal: o agente separa ru&iacute;do
+            de risco real para voc&ecirc; agir r&aacute;pido.
+          </p>
+          <ul>
+            <li>
+              <i class="fas fa-check"></i> CPU, RAM, disco, rede &mdash; live
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Bloqueio autom&aacute;tico de IPs
+              maliciosos
+            </li>
+            <li><i class="fas fa-check"></i> Modo Fortaleza com lockdown</li>
+          </ul>
+        </article>
+
+        <article class="pillar accent">
+          <div class="pillar-ico"><i class="fas fa-globe"></i></div>
+          <h3>Site que vende sem se expor</h3>
+          <p>
+            Velocidade baixa mata convers&atilde;o. Header fraco abre porta.
+            Phalanx aponta os gargalos com score e plano de a&ccedil;&atilde;o.
+          </p>
+          <ul>
+            <li><i class="fas fa-check"></i> TTFB, peso, redirecionamentos</li>
+            <li><i class="fas fa-check"></i> HSTS, CSP, cookies, SSL</li>
+            <li>
+              <i class="fas fa-check"></i> Score 0-100 + plano de
+              a&ccedil;&atilde;o
+            </li>
+          </ul>
+        </article>
+
+        <article class="pillar">
+          <div class="pillar-ico"><i class="fas fa-satellite-dish"></i></div>
+          <h3>Amea&ccedil;as antes do susto</h3>
+          <p>
+            Phalanx cruza seus sinais com fontes globais para voc&ecirc;
+            n&atilde;o descobrir tarde demais que estava vulner&aacute;vel ao
+            ataque da semana.
+          </p>
+          <ul>
+            <li><i class="fas fa-check"></i> CVEs explorados in-the-wild</li>
+            <li>
+              <i class="fas fa-check"></i> IOCs (URLs, IPs, hashes) cruzados
+            </li>
+            <li><i class="fas fa-check"></i> Alertas prioritizados via IA</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE SCAN ===== -->
+    <section id="scan" class="scan-block">
+      <div class="scan-head">
+        <span class="section-tag"
+          ><i class="fas fa-radar"></i> SCAN AO VIVO</span
+        >
+        <h2>Cole a URL. Receba uma verdade que d&aacute; para usar.</h2>
+        <p>
+          Em poucos segundos, Phalanx mede velocidade, valida seguran&ccedil;a e
+          mostra se seu site est&aacute; perdendo confian&ccedil;a, venda ou
+          prote&ccedil;&atilde;o.
+        </p>
+      </div>
+
+      <form id="scanForm" class="scan-form">
+        <div class="scan-input">
+          <i class="fas fa-link"></i>
+          <input
+            type="text"
+            name="url"
+            id="scanUrl"
+            placeholder="https://seusite.com.br"
+            required
+          />
+          <button type="submit" class="btn btn-primary">
+            <span class="btn-text">Rodar diagn&oacute;stico</span>
+            <span class="btn-loading"
+              ><i class="fas fa-circle-notch fa-spin"></i
+            ></span>
+          </button>
+        </div>
+        <p class="scan-disclaimer">
+          <i class="fas fa-shield-alt"></i> Auditamos apenas sites de sua
+          autoria. N&atilde;o use em alvos de terceiros sem permiss&atilde;o.
+        </p>
+      </form>
+
+      <!-- RESULT -->
+      <div class="scan-result" id="scanResult" hidden>
+        <div class="score-row">
+          <div class="score-card score-total">
+            <span class="score-label">Score Geral</span>
+            <span class="score-num" id="scoreTotal">--</span>
+            <span class="score-bar"
+              ><b id="scoreBarTotal" style="width: 0%"></b
+            ></span>
+          </div>
+          <div class="score-card">
+            <span class="score-label"
+              ><i class="fas fa-bolt"></i> Performance</span
+            >
+            <span class="score-num" id="scorePerf">--</span>
+            <span class="score-bar"
+              ><b id="scoreBarPerf" style="width: 0%"></b
+            ></span>
+          </div>
+          <div class="score-card">
+            <span class="score-label"
+              ><i class="fas fa-shield-alt"></i> Seguran&ccedil;a</span
+            >
+            <span class="score-num" id="scoreSec">--</span>
+            <span class="score-bar"
+              ><b id="scoreBarSec" style="width: 0%"></b
+            ></span>
+          </div>
+          <div class="score-card">
+            <span class="score-label"
+              ><i class="fas fa-skull-crossbones"></i> Brechas</span
+            >
+            <span class="score-num" id="scoreVuln">--</span>
+            <span class="score-bar"
+              ><b id="scoreBarVuln" style="width: 0%"></b
+            ></span>
+          </div>
+        </div>
+
+        <div class="result-grid">
+          <div class="r-card">
+            <h4><i class="fas fa-tachometer-alt"></i> Velocidade</h4>
+            <ul class="r-list" id="perfList"></ul>
+          </div>
+          <div class="r-card">
+            <h4><i class="fas fa-lock"></i> Seguran&ccedil;a</h4>
+            <ul class="r-list" id="secList"></ul>
+          </div>
+          <div class="r-card">
+            <h4><i class="fas fa-sitemap"></i> Mapeamento</h4>
+            <ul class="r-list" id="mapList"></ul>
+          </div>
+          <div class="r-card r-card-wide">
+            <h4>
+              <i class="fas fa-triangle-exclamation"></i> Brechas detectadas
+            </h4>
+            <div id="vulnList" class="vuln-list">
+              <p class="muted-line">
+                Nenhuma brecha &oacute;bvia. Continue a forma&ccedil;&atilde;o.
+              </p>
+            </div>
+          </div>
+          <div class="r-card r-card-wide">
+            <h4>
+              <i class="fas fa-brain"></i> Diagn&oacute;stico Phalanx (IA)
+            </h4>
+            <p id="aiSummary" class="ai-summary muted-line">
+              Analisando&hellip;
+            </p>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a href="#planos" class="btn btn-primary"
+            ><i class="fas fa-shield-alt"></i> Quero prote&ccedil;&atilde;o
+            cont&iacute;nua</a
+          >
+          <a href="#contato" class="btn btn-ghost"
+            ><i class="fas fa-comments"></i> Falar com a Arkkhe</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="howto">
+      <div class="section-head">
+        <span class="section-tag"><i class="fas fa-cogs"></i> COMO OPERA</span>
+        <h2>O sistema trabalha enquanto voc&ecirc; toca o neg&oacute;cio.</h2>
+      </div>
+      <div class="step-grid">
+        <div class="step">
+          <span class="step-n">01</span>
+          <h4>Diagnostica</h4>
+          <p>
+            Voc&ecirc; coloca o site e descobre onde est&aacute; o maior
+            vazamento de risco.
+          </p>
+        </div>
+        <div class="step">
+          <span class="step-n">02</span>
+          <h4>Prioriza</h4>
+          <p>
+            Phalanx separa o que &eacute; urgente do que &eacute; s&oacute;
+            barulho t&eacute;cnico.
+          </p>
+        </div>
+        <div class="step">
+          <span class="step-n">03</span>
+          <h4>Monitora</h4>
+          <p>O agente acompanha site, m&aacute;quina e sinais globais 24/7.</p>
+        </div>
+        <div class="step">
+          <span class="step-n">04</span>
+          <h4>Converte</h4>
+          <p>
+            Voc&ecirc; usa o relat&oacute;rio para corrigir, vender
+            confian&ccedil;a e evitar surpresa cara.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TECH STACK ===== -->
+    <section class="tech">
+      <div class="section-head">
+        <span class="section-tag"
+          ><i class="fas fa-microchip"></i> SOB O CAPÔ</span
+        >
+        <h2>Engenharia de batalha.</h2>
+      </div>
+      <div class="tech-cloud">
+        <span>Python 3.12</span>
+        <span class="hi">Llama 4 Scout</span>
+        <span>Groq</span>
+        <span class="hi">YARA</span>
+        <span>psutil</span>
+        <span>Nmap</span>
+        <span class="hi">Burp Suite</span>
+        <span class="hi">Prova bug bounty controlada</span>
+        <span class="hi">CISA KEV</span>
+        <span>NVD</span>
+        <span class="hi">abuse.ch</span>
+        <span>OpenPhish</span>
+        <span>Evolution API</span>
+        <span class="hi">WhatsApp</span>
+        <span>Docker</span>
+        <span class="hi">Caddy + TLS</span>
+        <span>Honeypot</span>
+        <span>Sandbox</span>
+        <span class="hi">Canary tokens</span>
+        <span>Forense de mem&oacute;ria</span>
+      </div>
+    </section>
+
+    <section class="local-proof">
+      <div class="local-proof-copy">
+        <span class="section-tag"
+          ><i class="fas fa-computer"></i> VERIFICACAO LOCAL</span
+        >
+        <h2>O site mostra a borda. O agente mostra a m&aacute;quina.</h2>
+        <p>
+          Depois do pareamento autorizado, Phalanx roda no dispositivo do
+          cliente e envia um diagn&oacute;stico compreens&iacute;vel: sistema,
+          engine usada, portas abertas, listeners, processos, firewall,
+          ferramentas dispon&iacute;veis e mudan&ccedil;as de baseline. Funciona
+          em Windows, Linux, macOS e Android/Termux.
+        </p>
+      </div>
+      <aside
+        class="hero-terminal local-terminal"
+        aria-label="Terminal de verificacao local Phalanx"
+      >
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span
+          ><span class="dot green"></span>
+          <span class="terminal-title">phalanx-agent — local</span>
+        </div>
+        <div class="terminal-body">
+          <p><span>$</span> phalanx-agent --diagnose endpoint</p>
+          <p class="ok">✓ plataforma: macOS / Windows / Linux / Android</p>
+          <p class="ok">✓ scan: portas, listeners, processos e firewall</p>
+          <p class="ok">✓ repert&oacute;rio: nmap, burp suite, yara, osquery</p>
+          <p class="warn">! mudan&ccedil;a detectada: nova porta aberta</p>
+          <p class="dim">relat&oacute;rio enviado para o terminal da console</p>
+          <div class="terminal-meter"><b style="width: 64%"></b></div>
+          <p><span>diagnostico</span> pronto para humano e IA entenderem</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section id="planos" class="pricing">
+      <div class="section-head">
+        <span class="section-tag"><i class="fas fa-crown"></i> PLANOS</span>
+        <h2>Escolha quanto risco voc&ecirc; aceita carregar sozinho.</h2>
+        <p>
+          Comece leve. Suba quando o custo de uma falha ficar maior que o custo
+          de se proteger.
+        </p>
+      </div>
+      <div class="plan-grid">
+        <article class="plan">
+          <header>
+            <span class="plan-name">Hoplita</span>
+            <span class="plan-price">R$ 0<small>/m&ecirc;s</small></span>
+          </header>
+          <p class="plan-sub">
+            Para descobrir se existe problema antes de comprar
+            prote&ccedil;&atilde;o.
+          </p>
+          <ul>
+            <li><i class="fas fa-check"></i> 1 site auditado / dia</li>
+            <li><i class="fas fa-check"></i> Defesa local b&aacute;sica</li>
+            <li><i class="fas fa-check"></i> Alertas por e-mail</li>
+            <li class="off">
+              <i class="fas fa-times"></i> WhatsApp em tempo real
+            </li>
+          </ul>
+          <a href="#contato" class="btn btn-ghost" data-track="Plano Hoplita"
+            >Come&ccedil;ar gr&aacute;tis</a
+          >
+        </article>
+
+        <article class="plan plan-featured">
+          <span class="plan-flag">Mais escolhido</span>
+          <header>
+            <span class="plan-name">Espartano</span>
+            <span class="plan-price">R$ 197<small>/m&ecirc;s</small></span>
+          </header>
+          <p class="plan-sub">
+            Para empresa que depende do site, do WhatsApp e da
+            reputa&ccedil;&atilde;o.
+          </p>
+          <ul>
+            <li><i class="fas fa-check"></i> At&eacute; 5 sites monitorados</li>
+            <li>
+              <i class="fas fa-check"></i> Defesa completa de PC + servidores
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Alertas WhatsApp + IA prioritiza
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Auditoria de velocidade
+              hor&aacute;ria
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Prova controlada paga com
+              confirma&ccedil;&atilde;o
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Modo Fortaleza autom&aacute;tico
+            </li>
+          </ul>
+          <a
+            href="#contato"
+            class="btn btn-primary"
+            data-track="Plano Espartano"
+            >Quero proteger agora</a
+          >
+        </article>
+
+        <article class="plan">
+          <header>
+            <span class="plan-name">Le&ocirc;nidas</span>
+            <span class="plan-price">Sob medida</span>
+          </header>
+          <p class="plan-sub">
+            Para opera&ccedil;&atilde;o que n&atilde;o pode descobrir
+            vulnerabilidade pelo cliente.
+          </p>
+          <ul>
+            <li><i class="fas fa-check"></i> Sites e infra ilimitados</li>
+            <li><i class="fas fa-check"></i> Threat hunting humano + IA</li>
+            <li><i class="fas fa-check"></i> SOC dedicado Arkkhe</li>
+            <li><i class="fas fa-check"></i> Conformidade LGPD/ISO</li>
+            <li><i class="fas fa-check"></i> SLA 24/7</li>
+          </ul>
+          <a href="#contato" class="btn btn-ghost" data-track="Plano Leonidas"
+            >Falar com a Arkkhe</a
+          >
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== THREAT TICKER ===== -->
+    <section id="ameacas" class="threats-live">
+      <div class="section-head">
+        <span class="section-tag"
+          ><i class="fas fa-bolt"></i> AMEAÇAS HOJE</span
+        >
+        <h2>O campo de batalha em tempo real.</h2>
+        <p>
+          Atualizado a partir do CISA KEV &mdash; vulnerabilidades sendo
+          exploradas <em>agora</em>.
+        </p>
+      </div>
+      <div class="ticker" id="ticker">
+        <div class="ticker-row" id="tickerRow">
+          <span class="muted-line">Carregando feed&hellip;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contato" class="contact">
+      <div class="contact-card">
+        <div class="contact-l">
+          <span class="section-tag"
+            ><i class="fas fa-handshake"></i> ENTRAR EM
+            FORMA&Ccedil;&Atilde;O</span
+          >
+          <h2>
+            Se o diagn&oacute;stico doeu, &eacute; porque ele encontrou dinheiro
+            em risco.
+          </h2>
+          <p>
+            Diga o que voc&ecirc; protege. A Arkkhe responde com o
+            pr&oacute;ximo movimento: corrigir, monitorar ou blindar.
+          </p>
+          <ul class="contact-info">
+            <li><i class="fab fa-whatsapp"></i> +55 11 98161-5957</li>
+            <li><i class="fas fa-envelope"></i> contato@arkkhe.ai</li>
+            <li>
+              <i class="fas fa-shield-halved"></i> Arkkhe Intelligent &middot;
+              Brasil
+            </li>
+          </ul>
+        </div>
+        <form id="leadForm" class="contact-form">
+          <label
+            ><span>Nome</span
+            ><input type="text" name="name" required maxlength="120"
+          /></label>
+          <label
+            ><span>E-mail</span
+            ><input type="email" name="email" required maxlength="160"
+          /></label>
+          <label
+            ><span>WhatsApp</span
+            ><input
+              type="text"
+              name="phone"
+              placeholder="(11) 9 0000-0000"
+              maxlength="40"
+          /></label>
+          <label
+            ><span>Site</span
+            ><input
+              type="text"
+              name="site"
+              placeholder="seusite.com.br"
+              maxlength="240"
+          /></label>
+          <label class="full"
+            ><span>Plano de interesse</span>
+            <select name="plan">
+              <option>Hoplita (gratis)</option>
+              <option selected>Espartano</option>
+              <option>Leonidas (custom)</option>
+            </select>
+          </label>
+          <label class="full"
+            ><span>Mensagem</span
+            ><textarea
+              name="message"
+              rows="3"
+              maxlength="1000"
+              placeholder="Conte o que voce protege, o que vende e qual falha nao pode acontecer."
+            ></textarea>
+          </label>
+          <button
+            type="submit"
+            class="btn btn-primary full"
+            data-track="Lead principal"
+          >
+            <i class="fas fa-paper-plane"></i> Quero meu plano de defesa
+          </button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="lp-footer">
+      <div class="foot-inner">
+        <div class="foot-brand">
+          <i class="fas fa-shield-alt"></i>
+          <strong>PHALANX</strong> v4.0
+          <span class="muted-line"
+            >&middot; A forma&ccedil;&atilde;o que n&atilde;o se rompe</span
+          >
+        </div>
+        <div class="foot-links">
+          <a href="/produto">Produto</a>
+          <a href="/scan-gratis">Scan</a>
+          <a href="/planos">Planos</a>
+          <a href="/console">Console</a>
+        </div>
+        <div class="foot-copy">
+          &copy; 2026 Arkkhe Intelligent &middot; Todos os direitos reservados
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/landing.js?v=20260429"></script>
+  </body>
+</html>
